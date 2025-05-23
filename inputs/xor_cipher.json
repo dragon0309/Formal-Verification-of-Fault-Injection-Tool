@@ -1,0 +1,581 @@
+{
+    "nodes": [
+        {
+            "id": "d0",
+            "type": "input",
+            "expr": "d0"
+        },
+        {
+            "id": "d1",
+            "type": "input",
+            "expr": "d1"
+        },
+        {
+            "id": "d2",
+            "type": "input",
+            "expr": "d2"
+        },
+        {
+            "id": "d3",
+            "type": "input",
+            "expr": "d3"
+        },
+        {
+            "id": "d4",
+            "type": "input",
+            "expr": "d4"
+        },
+        {
+            "id": "d5",
+            "type": "input",
+            "expr": "d5"
+        },
+        {
+            "id": "d6",
+            "type": "input",
+            "expr": "d6"
+        },
+        {
+            "id": "d7",
+            "type": "input",
+            "expr": "d7"
+        },
+        {
+            "id": "k0",
+            "type": "input",
+            "expr": "k0"
+        },
+        {
+            "id": "k1",
+            "type": "input",
+            "expr": "k1"
+        },
+        {
+            "id": "k2",
+            "type": "input",
+            "expr": "k2"
+        },
+        {
+            "id": "k3",
+            "type": "input",
+            "expr": "k3"
+        },
+        {
+            "id": "k4",
+            "type": "input",
+            "expr": "k4"
+        },
+        {
+            "id": "k5",
+            "type": "input",
+            "expr": "k5"
+        },
+        {
+            "id": "k6",
+            "type": "input",
+            "expr": "k6"
+        },
+        {
+            "id": "k7",
+            "type": "input",
+            "expr": "k7"
+        },
+        {
+            "id": "z0",
+            "type": "xor",
+            "inputs": [
+                "d0",
+                "k0"
+            ],
+            "expr": "d0 xor k0",
+            "vulnerable": true
+        },
+        {
+            "id": "z1",
+            "type": "xor",
+            "inputs": [
+                "d1",
+                "k1"
+            ],
+            "expr": "d1 xor k1",
+            "vulnerable": true
+        },
+        {
+            "id": "z2",
+            "type": "xor",
+            "inputs": [
+                "d2",
+                "k2"
+            ],
+            "expr": "d2 xor k2",
+            "vulnerable": true
+        },
+        {
+            "id": "z3",
+            "type": "xor",
+            "inputs": [
+                "d3",
+                "k3"
+            ],
+            "expr": "d3 xor k3",
+            "vulnerable": true
+        },
+        {
+            "id": "z4",
+            "type": "xor",
+            "inputs": [
+                "d4",
+                "k4"
+            ],
+            "expr": "d4 xor k4",
+            "vulnerable": true
+        },
+        {
+            "id": "z5",
+            "type": "xor",
+            "inputs": [
+                "d5",
+                "k5"
+            ],
+            "expr": "d5 xor k5",
+            "vulnerable": true
+        },
+        {
+            "id": "z6",
+            "type": "xor",
+            "inputs": [
+                "d6",
+                "k6"
+            ],
+            "expr": "d6 xor k6",
+            "vulnerable": true
+        },
+        {
+            "id": "z7",
+            "type": "xor",
+            "inputs": [
+                "d7",
+                "k7"
+            ],
+            "expr": "d7 xor k7",
+            "vulnerable": true
+        },
+        {
+            "id": "r0",
+            "type": "reg",
+            "inputs": [
+                "z0"
+            ],
+            "expr": "r0 = z0",
+            "vulnerable": false
+        },
+        {
+            "id": "r1",
+            "type": "reg",
+            "inputs": [
+                "z1"
+            ],
+            "expr": "r1 = z1",
+            "vulnerable": false
+        },
+        {
+            "id": "r2",
+            "type": "reg",
+            "inputs": [
+                "z2"
+            ],
+            "expr": "r2 = z2",
+            "vulnerable": false
+        },
+        {
+            "id": "r3",
+            "type": "reg",
+            "inputs": [
+                "z3"
+            ],
+            "expr": "r3 = z3",
+            "vulnerable": false
+        },
+        {
+            "id": "r4",
+            "type": "reg",
+            "inputs": [
+                "z4"
+            ],
+            "expr": "r4 = z4",
+            "vulnerable": false
+        },
+        {
+            "id": "r5",
+            "type": "reg",
+            "inputs": [
+                "z5"
+            ],
+            "expr": "r5 = z5",
+            "vulnerable": false
+        },
+        {
+            "id": "r6",
+            "type": "reg",
+            "inputs": [
+                "z6"
+            ],
+            "expr": "r6 = z6",
+            "vulnerable": false
+        },
+        {
+            "id": "r7",
+            "type": "reg",
+            "inputs": [
+                "z7"
+            ],
+            "expr": "r7 = z7",
+            "vulnerable": false
+        },
+        {
+            "id": "o0",
+            "type": "output",
+            "inputs": [
+                "r0"
+            ],
+            "expr": "o0 = r0"
+        },
+        {
+            "id": "o1",
+            "type": "output",
+            "inputs": [
+                "r1"
+            ],
+            "expr": "o1 = r1"
+        },
+        {
+            "id": "o2",
+            "type": "output",
+            "inputs": [
+                "r2"
+            ],
+            "expr": "o2 = r2"
+        },
+        {
+            "id": "o3",
+            "type": "output",
+            "inputs": [
+                "r3"
+            ],
+            "expr": "o3 = r3"
+        },
+        {
+            "id": "o4",
+            "type": "output",
+            "inputs": [
+                "r4"
+            ],
+            "expr": "o4 = r4"
+        },
+        {
+            "id": "o5",
+            "type": "output",
+            "inputs": [
+                "r5"
+            ],
+            "expr": "o5 = r5"
+        },
+        {
+            "id": "o6",
+            "type": "output",
+            "inputs": [
+                "r6"
+            ],
+            "expr": "o6 = r6"
+        },
+        {
+            "id": "o7",
+            "type": "output",
+            "inputs": [
+                "r7"
+            ],
+            "expr": "o7 = r7"
+        },
+        {
+            "id": "z0_red",
+            "type": "xor",
+            "inputs": [
+                "d0",
+                "k0"
+            ],
+            "expr": "d0 xor k0 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "z1_red",
+            "type": "xor",
+            "inputs": [
+                "d1",
+                "k1"
+            ],
+            "expr": "d1 xor k1 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "z2_red",
+            "type": "xor",
+            "inputs": [
+                "d2",
+                "k2"
+            ],
+            "expr": "d2 xor k2 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "z3_red",
+            "type": "xor",
+            "inputs": [
+                "d3",
+                "k3"
+            ],
+            "expr": "d3 xor k3 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "z4_red",
+            "type": "xor",
+            "inputs": [
+                "d4",
+                "k4"
+            ],
+            "expr": "d4 xor k4 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "z5_red",
+            "type": "xor",
+            "inputs": [
+                "d5",
+                "k5"
+            ],
+            "expr": "d5 xor k5 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "z6_red",
+            "type": "xor",
+            "inputs": [
+                "d6",
+                "k6"
+            ],
+            "expr": "d6 xor k6 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "z7_red",
+            "type": "xor",
+            "inputs": [
+                "d7",
+                "k7"
+            ],
+            "expr": "d7 xor k7 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp0",
+            "type": "xor",
+            "inputs": [
+                "z0",
+                "z0_red"
+            ],
+            "expr": "z0 xor z0_red",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp1",
+            "type": "xor",
+            "inputs": [
+                "z1",
+                "z1_red"
+            ],
+            "expr": "z1 xor z1_red",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp2",
+            "type": "xor",
+            "inputs": [
+                "z2",
+                "z2_red"
+            ],
+            "expr": "z2 xor z2_red",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp3",
+            "type": "xor",
+            "inputs": [
+                "z3",
+                "z3_red"
+            ],
+            "expr": "z3 xor z3_red",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp4",
+            "type": "xor",
+            "inputs": [
+                "z4",
+                "z4_red"
+            ],
+            "expr": "z4 xor z4_red",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp5",
+            "type": "xor",
+            "inputs": [
+                "z5",
+                "z5_red"
+            ],
+            "expr": "z5 xor z5_red",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp6",
+            "type": "xor",
+            "inputs": [
+                "z6",
+                "z6_red"
+            ],
+            "expr": "z6 xor z6_red",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp7",
+            "type": "xor",
+            "inputs": [
+                "z7",
+                "z7_red"
+            ],
+            "expr": "z7 xor z7_red",
+            "vulnerable": false
+        },
+        {
+            "id": "or1",
+            "type": "or",
+            "inputs": [
+                "cmp0",
+                "cmp1"
+            ],
+            "expr": "cmp0 or cmp1",
+            "vulnerable": false
+        },
+        {
+            "id": "or2",
+            "type": "or",
+            "inputs": [
+                "cmp2",
+                "cmp3"
+            ],
+            "expr": "cmp2 or cmp3",
+            "vulnerable": false
+        },
+        {
+            "id": "or3",
+            "type": "or",
+            "inputs": [
+                "cmp4",
+                "cmp5"
+            ],
+            "expr": "cmp4 or cmp5",
+            "vulnerable": false
+        },
+        {
+            "id": "or4",
+            "type": "or",
+            "inputs": [
+                "cmp6",
+                "cmp7"
+            ],
+            "expr": "cmp6 or cmp7",
+            "vulnerable": false
+        },
+        {
+            "id": "or5",
+            "type": "or",
+            "inputs": [
+                "or1",
+                "or2"
+            ],
+            "expr": "or1 or or2",
+            "vulnerable": false
+        },
+        {
+            "id": "or6",
+            "type": "or",
+            "inputs": [
+                "or3",
+                "or4"
+            ],
+            "expr": "or3 or or4",
+            "vulnerable": false
+        },
+        {
+            "id": "flag_logic",
+            "type": "or",
+            "inputs": [
+                "or5",
+                "or6"
+            ],
+            "expr": "or5 or or6",
+            "vulnerable": false
+        },
+        {
+            "id": "flag",
+            "type": "output",
+            "inputs": [
+                "flag_logic"
+            ],
+            "expr": "flag = flag_logic"
+        }
+    ],
+    "fault_model": {
+        "n_e": 1,
+        "n_c": 1,
+        "fault_type": "bit-flip",
+        "vulnerable_types": [
+            "xor"
+        ]
+    },
+    "blacklist": [
+        "r0",
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r7",
+        "z0_red",
+        "z1_red",
+        "z2_red",
+        "z3_red",
+        "z4_red",
+        "z5_red",
+        "z6_red",
+        "z7_red",
+        "cmp0",
+        "cmp1",
+        "cmp2",
+        "cmp3",
+        "cmp4",
+        "cmp5",
+        "cmp6",
+        "cmp7",
+        "flag_logic",
+        "or1",
+        "or2",
+        "or3",
+        "or4",
+        "or5",
+        "or6"
+    ],
+    "countermeasure": "detection",
+    "stages": 1
+}
