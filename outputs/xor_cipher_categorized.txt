@@ -1,0 +1,458 @@
+c Circuit: xor_cipher
+c Variable Count: 80, Clause Count: 205
+p cnf 80 205
+c --------------------------------------------------
+c XOR (z0)
+c Explanation: d0 XOR k0 = z0
+c
+-2 -3 -1 0  c (~d0 ∨ ~k0 ∨ ~z0)
+-2 3 1 0  c (~d0 ∨ k0 ∨ z0)
+2 -3 1 0  c (d0 ∨ ~k0 ∨ z0)
+2 3 -1 0  c (d0 ∨ k0 ∨ ~z0)
+c
+c --------------------------------------------------
+c XOR (z0_red)
+c Explanation: d0 XOR k0 = z0_red (Redundant)
+c
+-2 -3 -57 0  c (~d0 ∨ ~k0 ∨ ~z0_red)
+-2 3 57 0  c (~d0 ∨ k0 ∨ z0_red)
+2 -3 57 0  c (d0 ∨ ~k0 ∨ z0_red)
+2 3 -57 0  c (d0 ∨ k0 ∨ ~z0_red)
+c
+c --------------------------------------------------
+c XOR (z1)
+c Explanation: d1 XOR k1 = z1
+c
+-7 -8 -6 0  c (~d1 ∨ ~k1 ∨ ~z1)
+-7 8 6 0  c (~d1 ∨ k1 ∨ z1)
+7 -8 6 0  c (d1 ∨ ~k1 ∨ z1)
+7 8 -6 0  c (d1 ∨ k1 ∨ ~z1)
+c
+c --------------------------------------------------
+c XOR (z1_red)
+c Explanation: d1 XOR k1 = z1_red (Redundant)
+c
+-7 -8 -58 0  c (~d1 ∨ ~k1 ∨ ~z1_red)
+-7 8 58 0  c (~d1 ∨ k1 ∨ z1_red)
+7 -8 58 0  c (d1 ∨ ~k1 ∨ z1_red)
+7 8 -58 0  c (d1 ∨ k1 ∨ ~z1_red)
+c
+c --------------------------------------------------
+c XOR (z2)
+c Explanation: d2 XOR k2 = z2
+c
+-12 -13 -11 0  c (~d2 ∨ ~k2 ∨ ~z2)
+-12 13 11 0  c (~d2 ∨ k2 ∨ z2)
+12 -13 11 0  c (d2 ∨ ~k2 ∨ z2)
+12 13 -11 0  c (d2 ∨ k2 ∨ ~z2)
+c
+c --------------------------------------------------
+c XOR (z2_red)
+c Explanation: d2 XOR k2 = z2_red (Redundant)
+c
+-12 -13 -59 0  c (~d2 ∨ ~k2 ∨ ~z2_red)
+-12 13 59 0  c (~d2 ∨ k2 ∨ z2_red)
+12 -13 59 0  c (d2 ∨ ~k2 ∨ z2_red)
+12 13 -59 0  c (d2 ∨ k2 ∨ ~z2_red)
+c
+c --------------------------------------------------
+c XOR (z3)
+c Explanation: d3 XOR k3 = z3
+c
+-17 -18 -16 0  c (~d3 ∨ ~k3 ∨ ~z3)
+-17 18 16 0  c (~d3 ∨ k3 ∨ z3)
+17 -18 16 0  c (d3 ∨ ~k3 ∨ z3)
+17 18 -16 0  c (d3 ∨ k3 ∨ ~z3)
+c
+c --------------------------------------------------
+c XOR (z3_red)
+c Explanation: d3 XOR k3 = z3_red (Redundant)
+c
+-17 -18 -60 0  c (~d3 ∨ ~k3 ∨ ~z3_red)
+-17 18 60 0  c (~d3 ∨ k3 ∨ z3_red)
+17 -18 60 0  c (d3 ∨ ~k3 ∨ z3_red)
+17 18 -60 0  c (d3 ∨ k3 ∨ ~z3_red)
+c
+c --------------------------------------------------
+c XOR (z4)
+c Explanation: d4 XOR k4 = z4
+c
+-22 -23 -21 0  c (~d4 ∨ ~k4 ∨ ~z4)
+-22 23 21 0  c (~d4 ∨ k4 ∨ z4)
+22 -23 21 0  c (d4 ∨ ~k4 ∨ z4)
+22 23 -21 0  c (d4 ∨ k4 ∨ ~z4)
+c
+c --------------------------------------------------
+c XOR (z4_red)
+c Explanation: d4 XOR k4 = z4_red (Redundant)
+c
+-22 -23 -61 0  c (~d4 ∨ ~k4 ∨ ~z4_red)
+-22 23 61 0  c (~d4 ∨ k4 ∨ z4_red)
+22 -23 61 0  c (d4 ∨ ~k4 ∨ z4_red)
+22 23 -61 0  c (d4 ∨ k4 ∨ ~z4_red)
+c
+c --------------------------------------------------
+c XOR (z5)
+c Explanation: d5 XOR k5 = z5
+c
+-27 -28 -26 0  c (~d5 ∨ ~k5 ∨ ~z5)
+-27 28 26 0  c (~d5 ∨ k5 ∨ z5)
+27 -28 26 0  c (d5 ∨ ~k5 ∨ z5)
+27 28 -26 0  c (d5 ∨ k5 ∨ ~z5)
+c
+c --------------------------------------------------
+c XOR (z5_red)
+c Explanation: d5 XOR k5 = z5_red (Redundant)
+c
+-27 -28 -62 0  c (~d5 ∨ ~k5 ∨ ~z5_red)
+-27 28 62 0  c (~d5 ∨ k5 ∨ z5_red)
+27 -28 62 0  c (d5 ∨ ~k5 ∨ z5_red)
+27 28 -62 0  c (d5 ∨ k5 ∨ ~z5_red)
+c
+c --------------------------------------------------
+c XOR (z6)
+c Explanation: d6 XOR k6 = z6
+c
+-32 -33 -31 0  c (~d6 ∨ ~k6 ∨ ~z6)
+-32 33 31 0  c (~d6 ∨ k6 ∨ z6)
+32 -33 31 0  c (d6 ∨ ~k6 ∨ z6)
+32 33 -31 0  c (d6 ∨ k6 ∨ ~z6)
+c
+c --------------------------------------------------
+c XOR (z6_red)
+c Explanation: d6 XOR k6 = z6_red (Redundant)
+c
+-32 -33 -63 0  c (~d6 ∨ ~k6 ∨ ~z6_red)
+-32 33 63 0  c (~d6 ∨ k6 ∨ z6_red)
+32 -33 63 0  c (d6 ∨ ~k6 ∨ z6_red)
+32 33 -63 0  c (d6 ∨ k6 ∨ ~z6_red)
+c
+c --------------------------------------------------
+c XOR (z7)
+c Explanation: d7 XOR k7 = z7
+c
+-37 -38 -36 0  c (~d7 ∨ ~k7 ∨ ~z7)
+-37 38 36 0  c (~d7 ∨ k7 ∨ z7)
+37 -38 36 0  c (d7 ∨ ~k7 ∨ z7)
+37 38 -36 0  c (d7 ∨ k7 ∨ ~z7)
+c
+c --------------------------------------------------
+c XOR (z7_red)
+c Explanation: d7 XOR k7 = z7_red (Redundant)
+c
+-37 -38 -64 0  c (~d7 ∨ ~k7 ∨ ~z7_red)
+-37 38 64 0  c (~d7 ∨ k7 ∨ z7_red)
+37 -38 64 0  c (d7 ∨ ~k7 ∨ z7_red)
+37 38 -64 0  c (d7 ∨ k7 ∨ ~z7_red)
+c
+c --------------------------------------------------
+c Fault_Injection (z0)
+c Explanation: Bit-flip fault on z0: control_z0 z0 z0_faulty
+c
+-4 -1 -5 0  c (~control_z0 ∨ ~z0 ∨ ~z0_faulty)
+-4 1 5 0  c (~control_z0 ∨ z0 ∨ z0_faulty)
+4 -1 5 0  c (control_z0 ∨ ~z0 ∨ z0_faulty)
+4 1 -5 0  c (control_z0 ∨ z0 ∨ ~z0_faulty)
+c
+c --------------------------------------------------
+c Fault_Injection (z1)
+c Explanation: Bit-flip fault on z1: control_z1 z1 z1_faulty
+c
+-9 -6 -10 0  c (~control_z1 ∨ ~z1 ∨ ~z1_faulty)
+-9 6 10 0  c (~control_z1 ∨ z1 ∨ z1_faulty)
+9 -6 10 0  c (control_z1 ∨ ~z1 ∨ z1_faulty)
+9 6 -10 0  c (control_z1 ∨ z1 ∨ ~z1_faulty)
+c
+c --------------------------------------------------
+c Fault_Injection (z2)
+c Explanation: Bit-flip fault on z2: control_z2 z2 z2_faulty
+c
+-14 -11 -15 0  c (~control_z2 ∨ ~z2 ∨ ~z2_faulty)
+-14 11 15 0  c (~control_z2 ∨ z2 ∨ z2_faulty)
+14 -11 15 0  c (control_z2 ∨ ~z2 ∨ z2_faulty)
+14 11 -15 0  c (control_z2 ∨ z2 ∨ ~z2_faulty)
+c
+c --------------------------------------------------
+c Fault_Injection (z3)
+c Explanation: Bit-flip fault on z3: control_z3 z3 z3_faulty
+c
+-19 -16 -20 0  c (~control_z3 ∨ ~z3 ∨ ~z3_faulty)
+-19 16 20 0  c (~control_z3 ∨ z3 ∨ z3_faulty)
+19 -16 20 0  c (control_z3 ∨ ~z3 ∨ z3_faulty)
+19 16 -20 0  c (control_z3 ∨ z3 ∨ ~z3_faulty)
+c
+c --------------------------------------------------
+c Fault_Injection (z4)
+c Explanation: Bit-flip fault on z4: control_z4 z4 z4_faulty
+c
+-24 -21 -25 0  c (~control_z4 ∨ ~z4 ∨ ~z4_faulty)
+-24 21 25 0  c (~control_z4 ∨ z4 ∨ z4_faulty)
+24 -21 25 0  c (control_z4 ∨ ~z4 ∨ z4_faulty)
+24 21 -25 0  c (control_z4 ∨ z4 ∨ ~z4_faulty)
+c
+c --------------------------------------------------
+c Fault_Injection (z5)
+c Explanation: Bit-flip fault on z5: control_z5 z5 z5_faulty
+c
+-29 -26 -30 0  c (~control_z5 ∨ ~z5 ∨ ~z5_faulty)
+-29 26 30 0  c (~control_z5 ∨ z5 ∨ z5_faulty)
+29 -26 30 0  c (control_z5 ∨ ~z5 ∨ z5_faulty)
+29 26 -30 0  c (control_z5 ∨ z5 ∨ ~z5_faulty)
+c
+c --------------------------------------------------
+c Fault_Injection (z6)
+c Explanation: Bit-flip fault on z6: control_z6 z6 z6_faulty
+c
+-34 -31 -35 0  c (~control_z6 ∨ ~z6 ∨ ~z6_faulty)
+-34 31 35 0  c (~control_z6 ∨ z6 ∨ z6_faulty)
+34 -31 35 0  c (control_z6 ∨ ~z6 ∨ z6_faulty)
+34 31 -35 0  c (control_z6 ∨ z6 ∨ ~z6_faulty)
+c
+c --------------------------------------------------
+c Fault_Injection (z7)
+c Explanation: Bit-flip fault on z7: control_z7 z7 z7_faulty
+c
+-39 -36 -40 0  c (~control_z7 ∨ ~z7 ∨ ~z7_faulty)
+-39 36 40 0  c (~control_z7 ∨ z7 ∨ z7_faulty)
+39 -36 40 0  c (control_z7 ∨ ~z7 ∨ z7_faulty)
+39 36 -40 0  c (control_z7 ∨ z7 ∨ ~z7_faulty)
+c
+c --------------------------------------------------
+c Comparison (cmp0)
+c Explanation: z0_faulty XOR z0_red = cmp0 (Fault Detection)
+c
+-5 -57 -65 0  c (~z0_faulty ∨ ~z0_red ∨ ~cmp0)
+-5 57 65 0  c (~z0_faulty ∨ z0_red ∨ cmp0)
+5 -57 65 0  c (z0_faulty ∨ ~z0_red ∨ cmp0)
+5 57 -65 0  c (z0_faulty ∨ z0_red ∨ ~cmp0)
+c
+c --------------------------------------------------
+c Comparison (cmp1)
+c Explanation: z1_faulty XOR z1_red = cmp1 (Fault Detection)
+c
+-10 -58 -66 0  c (~z1_faulty ∨ ~z1_red ∨ ~cmp1)
+-10 58 66 0  c (~z1_faulty ∨ z1_red ∨ cmp1)
+10 -58 66 0  c (z1_faulty ∨ ~z1_red ∨ cmp1)
+10 58 -66 0  c (z1_faulty ∨ z1_red ∨ ~cmp1)
+c
+c --------------------------------------------------
+c Comparison (cmp2)
+c Explanation: z2_faulty XOR z2_red = cmp2 (Fault Detection)
+c
+-15 -59 -67 0  c (~z2_faulty ∨ ~z2_red ∨ ~cmp2)
+-15 59 67 0  c (~z2_faulty ∨ z2_red ∨ cmp2)
+15 -59 67 0  c (z2_faulty ∨ ~z2_red ∨ cmp2)
+15 59 -67 0  c (z2_faulty ∨ z2_red ∨ ~cmp2)
+c
+c --------------------------------------------------
+c Comparison (cmp3)
+c Explanation: z3_faulty XOR z3_red = cmp3 (Fault Detection)
+c
+-20 -60 -68 0  c (~z3_faulty ∨ ~z3_red ∨ ~cmp3)
+-20 60 68 0  c (~z3_faulty ∨ z3_red ∨ cmp3)
+20 -60 68 0  c (z3_faulty ∨ ~z3_red ∨ cmp3)
+20 60 -68 0  c (z3_faulty ∨ z3_red ∨ ~cmp3)
+c
+c --------------------------------------------------
+c Comparison (cmp4)
+c Explanation: z4_faulty XOR z4_red = cmp4 (Fault Detection)
+c
+-25 -61 -69 0  c (~z4_faulty ∨ ~z4_red ∨ ~cmp4)
+-25 61 69 0  c (~z4_faulty ∨ z4_red ∨ cmp4)
+25 -61 69 0  c (z4_faulty ∨ ~z4_red ∨ cmp4)
+25 61 -69 0  c (z4_faulty ∨ z4_red ∨ ~cmp4)
+c
+c --------------------------------------------------
+c Comparison (cmp5)
+c Explanation: z5_faulty XOR z5_red = cmp5 (Fault Detection)
+c
+-30 -62 -70 0  c (~z5_faulty ∨ ~z5_red ∨ ~cmp5)
+-30 62 70 0  c (~z5_faulty ∨ z5_red ∨ cmp5)
+30 -62 70 0  c (z5_faulty ∨ ~z5_red ∨ cmp5)
+30 62 -70 0  c (z5_faulty ∨ z5_red ∨ ~cmp5)
+c
+c --------------------------------------------------
+c Comparison (cmp6)
+c Explanation: z6_faulty XOR z6_red = cmp6 (Fault Detection)
+c
+-35 -63 -71 0  c (~z6_faulty ∨ ~z6_red ∨ ~cmp6)
+-35 63 71 0  c (~z6_faulty ∨ z6_red ∨ cmp6)
+35 -63 71 0  c (z6_faulty ∨ ~z6_red ∨ cmp6)
+35 63 -71 0  c (z6_faulty ∨ z6_red ∨ ~cmp6)
+c
+c --------------------------------------------------
+c Comparison (cmp7)
+c Explanation: z7_faulty XOR z7_red = cmp7 (Fault Detection)
+c
+-40 -64 -72 0  c (~z7_faulty ∨ ~z7_red ∨ ~cmp7)
+-40 64 72 0  c (~z7_faulty ∨ z7_red ∨ cmp7)
+40 -64 72 0  c (z7_faulty ∨ ~z7_red ∨ cmp7)
+40 64 -72 0  c (z7_faulty ∨ z7_red ∨ ~cmp7)
+c
+c --------------------------------------------------
+c OR (or_gate_73)
+c Explanation: cmp0 OR cmp1 = or1 (OR Gate Definition)
+c
+-66 73 0  c (~cmp1 ∨ or1)
+-65 73 0  c (~cmp0 ∨ or1)
+65 66 -73 0  c (cmp0 ∨ cmp1 ∨ ~or1)
+c
+c --------------------------------------------------
+c OR (or_gate_74)
+c Explanation: cmp2 OR cmp3 = or2 (OR Gate Definition)
+c
+-68 74 0  c (~cmp3 ∨ or2)
+-67 74 0  c (~cmp2 ∨ or2)
+67 68 -74 0  c (cmp2 ∨ cmp3 ∨ ~or2)
+c
+c --------------------------------------------------
+c OR (or_gate_75)
+c Explanation: cmp4 OR cmp5 = or3 (OR Gate Definition)
+c
+-70 75 0  c (~cmp5 ∨ or3)
+-69 75 0  c (~cmp4 ∨ or3)
+69 70 -75 0  c (cmp4 ∨ cmp5 ∨ ~or3)
+c
+c --------------------------------------------------
+c OR (or_gate_76)
+c Explanation: cmp6 OR cmp7 = or4 (OR Gate Definition)
+c
+-72 76 0  c (~cmp7 ∨ or4)
+-71 76 0  c (~cmp6 ∨ or4)
+71 72 -76 0  c (cmp6 ∨ cmp7 ∨ ~or4)
+c
+c --------------------------------------------------
+c OR (or_gate_77)
+c Explanation: or1 OR or2 = or5 (OR Gate Definition)
+c
+-74 77 0  c (~or2 ∨ or5)
+-73 77 0  c (~or1 ∨ or5)
+73 74 -77 0  c (or1 ∨ or2 ∨ ~or5)
+c
+c --------------------------------------------------
+c OR (or_gate_78)
+c Explanation: or3 OR or4 = or6 (OR Gate Definition)
+c
+-76 78 0  c (~or4 ∨ or6)
+-75 78 0  c (~or3 ∨ or6)
+75 76 -78 0  c (or3 ∨ or4 ∨ ~or6)
+c
+c --------------------------------------------------
+c OR (or_gate_79)
+c Explanation: or5 OR or6 = flag_logic (OR Gate Definition)
+c
+-78 79 0  c (~or6 ∨ flag_logic)
+-77 79 0  c (~or5 ∨ flag_logic)
+77 78 -79 0  c (or5 ∨ or6 ∨ ~flag_logic)
+c
+c --------------------------------------------------
+c Register (r0)
+c Explanation: z0 = r0 (Register Connection)
+c
+-41 49 0  c (~r0 ∨ o0)
+-1 41 0  c (~z0 ∨ r0)
+1 -41 0  c (z0 ∨ ~r0)
+41 -49 0  c (r0 ∨ ~o0)
+c
+c --------------------------------------------------
+c Register (r1)
+c Explanation: z1 = r1 (Register Connection)
+c
+-42 50 0  c (~r1 ∨ o1)
+-6 42 0  c (~z1 ∨ r1)
+6 -42 0  c (z1 ∨ ~r1)
+42 -50 0  c (r1 ∨ ~o1)
+c
+c --------------------------------------------------
+c Register (r2)
+c Explanation: z2 = r2 (Register Connection)
+c
+-43 51 0  c (~r2 ∨ o2)
+-11 43 0  c (~z2 ∨ r2)
+11 -43 0  c (z2 ∨ ~r2)
+43 -51 0  c (r2 ∨ ~o2)
+c
+c --------------------------------------------------
+c Register (r3)
+c Explanation: z3 = r3 (Register Connection)
+c
+-44 52 0  c (~r3 ∨ o3)
+-16 44 0  c (~z3 ∨ r3)
+16 -44 0  c (z3 ∨ ~r3)
+44 -52 0  c (r3 ∨ ~o3)
+c
+c --------------------------------------------------
+c Register (r4)
+c Explanation: z4 = r4 (Register Connection)
+c
+-45 53 0  c (~r4 ∨ o4)
+-21 45 0  c (~z4 ∨ r4)
+21 -45 0  c (z4 ∨ ~r4)
+45 -53 0  c (r4 ∨ ~o4)
+c
+c --------------------------------------------------
+c Register (r5)
+c Explanation: z5 = r5 (Register Connection)
+c
+-46 54 0  c (~r5 ∨ o5)
+-26 46 0  c (~z5 ∨ r5)
+26 -46 0  c (z5 ∨ ~r5)
+46 -54 0  c (r5 ∨ ~o5)
+c
+c --------------------------------------------------
+c Register (r6)
+c Explanation: z6 = r6 (Register Connection)
+c
+-47 55 0  c (~r6 ∨ o6)
+-31 47 0  c (~z6 ∨ r6)
+31 -47 0  c (z6 ∨ ~r6)
+47 -55 0  c (r6 ∨ ~o6)
+c
+c --------------------------------------------------
+c Register (r7)
+c Explanation: z7 = r7 (Register Connection)
+c
+-48 56 0  c (~r7 ∨ o7)
+-36 48 0  c (~z7 ∨ r7)
+36 -48 0  c (z7 ∨ ~r7)
+48 -56 0  c (r7 ∨ ~o7)
+c
+c --------------------------------------------------
+c Countermeasure (flag)
+c Explanation: Detection: flag = 0
+c
+-80 0  c (~flag)
+-79 80 0  c (~flag_logic ∨ flag)
+79 -80 0  c (flag_logic ∨ ~flag)
+c
+c --------------------------------------------------
+c Fault_Constraint (at_least_one_control)
+c Explanation: At least 1 fault constraint
+c
+4 9 14 19 24 29 34 39 0  c (control_z0 ∨ control_z1 ∨ control_z2 ∨ control_z3 ∨ control_z4 ∨ control_z5 ∨ control_z6 ∨ control_z7)
+c
+c --------------------------------------------------
+c AtMost (atmost_constraints)
+c Explanation: Fault number constraints (AtMost)
+c
+-45 46 0  c (~r4 ∨ r5)
+-44 45 0  c (~r3 ∨ r4)
+-43 44 0  c (~r2 ∨ r3)
+-42 43 0  c (~r1 ∨ r2)
+-41 42 0  c (~r0 ∨ r1)
+-40 41 0  c (~z7_faulty ∨ r0)
+-39 -46 0  c (~control_z7 ∨ ~r5)
+-34 -45 0  c (~control_z6 ∨ ~r4)
+-34 46 0  c (~control_z6 ∨ r5)
+-29 -44 0  c (~control_z5 ∨ ~r3)
+-29 45 0  c (~control_z5 ∨ r4)
+-24 -43 0  c (~control_z4 ∨ ~r2)
+-24 44 0  c (~control_z4 ∨ r3)
+-19 -42 0  c (~control_z3 ∨ ~r1)
+-19 43 0  c (~control_z3 ∨ r2)
+-14 -41 0  c (~control_z2 ∨ ~r0)
+-14 42 0  c (~control_z2 ∨ r1)
+-9 -40 0  c (~control_z1 ∨ ~z7_faulty)
+-9 41 0  c (~control_z1 ∨ r0)
+-4 40 0  c (~control_z0 ∨ z7_faulty)
+c

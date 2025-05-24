@@ -7,6 +7,7 @@ import time
 from datetime import datetime
 from cnf_encoder import CNFEncoder
 from sat_solver import SATSolver
+from clause_display import display_categorized_clauses
 
 def setup_logging():
     logging.basicConfig(
@@ -80,6 +81,8 @@ def main():
                         help='Fault type (overrides JSON value)')
     parser.add_argument('--countermeasure', choices=['detection', 'correction'], 
                         help='Countermeasure type (overrides JSON value)')
+    parser.add_argument('--no-categorize', action='store_true', 
+                        help='Skip generating categorized clauses output')
     args = parser.parse_args()
     
     # Validate arguments
@@ -90,6 +93,8 @@ def main():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     json_file = os.path.join(base_dir, 'inputs', f'{args.circuit}.json')
     cnf_file = os.path.join(base_dir, 'outputs', f'{args.circuit}.cnf')
+    var_map_file = os.path.join(base_dir, 'outputs', f'{args.circuit}_variable_map.json')
+    categorized_file = os.path.join(base_dir, 'outputs', f'{args.circuit}_categorized.txt')
     output_file = os.path.join(base_dir, 'outputs', f'{args.circuit}.out')
     
     # Ensure output directory exists
@@ -114,6 +119,25 @@ def main():
         
         # Save CNF file
         encoder.save_cnf(cnf_file)
+        
+        # Generate categorized clauses output if not disabled
+        if not args.no_categorize and os.path.exists(var_map_file):
+            logging.info("Generating categorized clauses output...")
+            try:
+                import io
+                from contextlib import redirect_stdout
+                
+                f = io.StringIO()
+                with redirect_stdout(f):
+                    display_categorized_clauses(cnf_file, var_map_file)
+                
+                with open(categorized_file, 'w', encoding='utf-8') as out_file:
+                    out_file.write(f.getvalue())
+                
+                logging.info(f"Categorized clauses saved to: {categorized_file}")
+            except Exception as e:
+                logging.error(f"Failed to generate categorized clauses: {str(e)}")
+                logging.debug("Continuing with SAT solving...")
         
         # Create solver
         solver = SATSolver(use_library=not args.use_minisat)
