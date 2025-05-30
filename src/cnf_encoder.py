@@ -21,7 +21,7 @@ class CNFEncoder:
         self.cnf = CNF()
         self.variable_map = {}  
         self.control_vars = {}  
-        self.select_vars = {}   
+        # self.select_vars = {}   
         self.faulty_outputs = {}  
         self.next_var = 1
         
@@ -115,18 +115,18 @@ class CNFEncoder:
             self.next_var += 1
         return self.control_vars[node_id]
     
-    def _get_select_var(self, node_id, index=1):
-        # Get or create a select variable for a node
-        # Select variables are used in countermeasures that need to select between multiple options
-        key = f"sb{index}_{node_id}"
-        if key not in self.select_vars:
-            self.select_vars[key] = self.next_var
+    # def _get_select_var(self, node_id, index=1):
+    #     # Get or create a select variable for a node
+    #     # Select variables are used in countermeasures that need to select between multiple options
+    #     key = f"sb{index}_{node_id}"
+    #     if key not in self.select_vars:
+    #         self.select_vars[key] = self.next_var
             
-            self.var_ranges["selects"]["min"] = min(self.var_ranges["selects"]["min"], self.next_var)
-            self.var_ranges["selects"]["max"] = max(self.var_ranges["selects"]["max"], self.next_var)
+    #         self.var_ranges["selects"]["min"] = min(self.var_ranges["selects"]["min"], self.next_var)
+    #         self.var_ranges["selects"]["max"] = max(self.var_ranges["selects"]["max"], self.next_var)
             
-            self.next_var += 1
-        return self.select_vars[key]
+    #         self.next_var += 1
+    #     return self.select_vars[key]
     
     def _get_faulty_output(self, node_id):
         # Get or create a faulty output variable for a node
@@ -793,10 +793,10 @@ class CNFEncoder:
         logging.info(f"  - Node variables: {len(self.variable_map)}, ID range: {self.var_ranges['nodes']['min']}-{self.var_ranges['nodes']['max']}")
         logging.info(f"  - Control variables: {len(self.control_vars)}, ID range: {self.var_ranges['controls']['min']}-{self.var_ranges['controls']['max']}")
         
-        if len(self.select_vars) > 0:
-            logging.info(f"  - Select variables: {len(self.select_vars)}, ID range: {self.var_ranges['selects']['min']}-{self.var_ranges['selects']['max']}")
-        else:
-            logging.info(f"  - Select variables: {len(self.select_vars)}")
+        # if len(self.select_vars) > 0:
+        #     logging.info(f"  - Select variables: {len(self.select_vars)}, ID range: {self.var_ranges['selects']['min']}-{self.var_ranges['selects']['max']}")
+        # else:
+        #     logging.info(f"  - Select variables: {len(self.select_vars)}")
         
         logging.info(f"  - Faulty output variables: {len(self.faulty_outputs)}, ID range: {self.var_ranges['faulty_outputs']['min']}-{self.var_ranges['faulty_outputs']['max']}")
         
@@ -826,7 +826,7 @@ class CNFEncoder:
         variable_map_data = {
             "variable_map": {k: v for k, v in self.variable_map.items()},
             "control_vars": {k: v for k, v in self.control_vars.items()},
-            "select_vars": {k: v for k, v in self.select_vars.items()},
+            # "select_vars": {k: v for k, v in self.select_vars.items()},
             "faulty_outputs": {k: v for k, v in self.faulty_outputs.items()}
         }
         
@@ -843,8 +843,8 @@ class CNFEncoder:
         for node_id, var in self.control_vars.items():
             var_to_node["controls"][str(var)] = node_id
         
-        for node_id, var in self.select_vars.items():
-            var_to_node["selects"][str(var)] = node_id
+        # for node_id, var in self.select_vars.items():
+        #     var_to_node["selects"][str(var)] = node_id
         
         for node_id, var in self.faulty_outputs.items():
             var_to_node["faulty_outputs"][str(var)] = node_id
@@ -874,9 +874,9 @@ class CNFEncoder:
         # Return the mapping from node IDs to control variable IDs
         return self.control_vars
     
-    def get_select_vars(self):
-        # Return the mapping from node IDs to select variable IDs
-        return self.select_vars
+    # def get_select_vars(self):
+    #     # Return the mapping from node IDs to select variable IDs
+    #     return self.select_vars
     
     def get_faulty_outputs(self):
         # Return the mapping from node IDs to faulty output variable IDs

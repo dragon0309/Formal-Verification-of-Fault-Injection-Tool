@@ -75,7 +75,6 @@
         "z6": 34,
         "z7": 39
     },
-    "select_vars": {},
     "faulty_outputs": {
         "z0_faulty": 5,
         "z1_faulty": 10,

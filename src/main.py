@@ -121,23 +121,23 @@ def main():
         encoder.save_cnf(cnf_file)
         
         # Generate categorized clauses output if not disabled
-        if not args.no_categorize and os.path.exists(var_map_file):
-            logging.info("Generating categorized clauses output...")
-            try:
-                import io
-                from contextlib import redirect_stdout
+        # if not args.no_categorize and os.path.exists(var_map_file):
+        #     logging.info("Generating categorized clauses output...")
+        #     try:
+        #         import io
+        #         from contextlib import redirect_stdout
                 
-                f = io.StringIO()
-                with redirect_stdout(f):
-                    display_categorized_clauses(cnf_file, var_map_file)
+        #         f = io.StringIO()
+        #         with redirect_stdout(f):
+        #             display_categorized_clauses(cnf_file, var_map_file)
                 
-                with open(categorized_file, 'w', encoding='utf-8') as out_file:
-                    out_file.write(f.getvalue())
+        #         with open(categorized_file, 'w', encoding='utf-8') as out_file:
+        #             out_file.write(f.getvalue())
                 
-                logging.info(f"Categorized clauses saved to: {categorized_file}")
-            except Exception as e:
-                logging.error(f"Failed to generate categorized clauses: {str(e)}")
-                logging.debug("Continuing with SAT solving...")
+        #         logging.info(f"Categorized clauses saved to: {categorized_file}")
+        #     except Exception as e:
+        #         logging.error(f"Failed to generate categorized clauses: {str(e)}")
+        #         logging.debug("Continuing with SAT solving...")
         
         # Create solver
         solver = SATSolver(use_library=not args.use_minisat)

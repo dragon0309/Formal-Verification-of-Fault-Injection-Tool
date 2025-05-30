@@ -8,11 +8,8 @@ This tool evaluates the security of cryptographic implementations by modeling fa
 
 ## Supported Circuits
 
-- **LFSR** (Linear Feedback Shift Register)
 - **XOR Cipher**
 - **S-Box**
-- **Shift Cipher**
-- **MixColumn**
 
 ## Features
 
@@ -23,11 +20,9 @@ This tool evaluates the security of cryptographic implementations by modeling fa
 
 ### Countermeasure Types
 - **Detection**: Verifies if the circuit can detect injected faults
-- **Correction**: Verifies if the circuit can correct injected faults
 
 ### Analysis Options
 - Configurable fault quantity constraints (n_e)
-- CNF encoding for SAT problem formulation
 - Multiple solver options (PySAT or external MiniSAT)
 
 ## Installation
@@ -45,7 +40,7 @@ This tool evaluates the security of cryptographic implementations by modeling fa
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/dragon0309/Formal-Verification-of-Fault-Injection-Tool.git]
+   git clone [https://github.com/dragon0309/Formal-Verification-of-Fault-Injection-Tool.git fault_verification]
    cd fault_verification
    ```
 
@@ -63,11 +58,8 @@ python src/main.py [circuit_name]
 ```
 
 ### Circuit Options
-- `lfsr`
 - `xor_cipher`
 - `sbox`
-- `shift_cipher`
-- `mixcolumn`
 
 ### Examples
 
@@ -81,14 +73,14 @@ python src/main.py xor_cipher
 python src/main.py xor_cipher --fault-type set
 ```
 
-**Choose countermeasure type:**
+**Choose n_e:**
 ```bash
-python src/main.py xor_cipher --countermeasure correction
+python src/main.py xor_cipher -n_e 2
 ```
 
 **Combined parameters:**
 ```bash
-python src/main.py xor_cipher --fault-type set --countermeasure correction
+python src/main.py xor_cipher --fault-type set -n_e 2
 ```
 
 ## Project Structure

@@ -1,0 +1,608 @@
+{
+    "nodes": [
+        {
+            "id": "d0",
+            "type": "input",
+            "expr": "d0"
+        },
+        {
+            "id": "d1",
+            "type": "input",
+            "expr": "d1"
+        },
+        {
+            "id": "d2",
+            "type": "input",
+            "expr": "d2"
+        },
+        {
+            "id": "d3",
+            "type": "input",
+            "expr": "d3"
+        },
+        {
+            "id": "t1_0",
+            "type": "and",
+            "inputs": [
+                "d0",
+                "d1"
+            ],
+            "expr": "d0 and d1",
+            "vulnerable": true
+        },
+        {
+            "id": "t1_1",
+            "type": "xor",
+            "inputs": [
+                "d1",
+                "d2"
+            ],
+            "expr": "d1 xor d2",
+            "vulnerable": true
+        },
+        {
+            "id": "t1_2",
+            "type": "xor",
+            "inputs": [
+                "d2",
+                "d3"
+            ],
+            "expr": "d2 xor d3",
+            "vulnerable": true
+        },
+        {
+            "id": "t1_3",
+            "type": "and",
+            "inputs": [
+                "d3",
+                "d0"
+            ],
+            "expr": "d3 and d0",
+            "vulnerable": true
+        },
+        {
+            "id": "nd0",
+            "type": "not",
+            "inputs": [
+                "d0"
+            ],
+            "expr": "not d0",
+            "vulnerable": true
+        },
+        {
+            "id": "nd1",
+            "type": "not",
+            "inputs": [
+                "d1"
+            ],
+            "expr": "not d1",
+            "vulnerable": true
+        },
+        {
+            "id": "nd2",
+            "type": "not",
+            "inputs": [
+                "d2"
+            ],
+            "expr": "not d2",
+            "vulnerable": true
+        },
+        {
+            "id": "nd3",
+            "type": "not",
+            "inputs": [
+                "d3"
+            ],
+            "expr": "not d3",
+            "vulnerable": true
+        },
+        {
+            "id": "t2_0",
+            "type": "xor",
+            "inputs": [
+                "t1_0",
+                "nd2"
+            ],
+            "expr": "t1_0 xor nd2",
+            "vulnerable": true
+        },
+        {
+            "id": "t2_1",
+            "type": "xor",
+            "inputs": [
+                "t1_1",
+                "nd3"
+            ],
+            "expr": "t1_1 xor nd3",
+            "vulnerable": true
+        },
+        {
+            "id": "t2_2",
+            "type": "xor",
+            "inputs": [
+                "t1_2",
+                "nd0"
+            ],
+            "expr": "t1_2 xor nd0",
+            "vulnerable": true
+        },
+        {
+            "id": "t2_3",
+            "type": "xor",
+            "inputs": [
+                "t1_3",
+                "nd1"
+            ],
+            "expr": "t1_3 xor nd1",
+            "vulnerable": true
+        },
+        {
+            "id": "t3_0",
+            "type": "or",
+            "inputs": [
+                "t1_0",
+                "t2_3"
+            ],
+            "expr": "t1_0 or t2_3",
+            "vulnerable": true
+        },
+        {
+            "id": "t3_1",
+            "type": "or",
+            "inputs": [
+                "t1_1",
+                "t2_0"
+            ],
+            "expr": "t1_1 or t2_0",
+            "vulnerable": true
+        },
+        {
+            "id": "t3_2",
+            "type": "or",
+            "inputs": [
+                "t1_2",
+                "t2_1"
+            ],
+            "expr": "t1_2 or t2_1",
+            "vulnerable": true
+        },
+        {
+            "id": "t3_3",
+            "type": "or",
+            "inputs": [
+                "t1_3",
+                "t2_2"
+            ],
+            "expr": "t1_3 or t2_2",
+            "vulnerable": true
+        },
+        {
+            "id": "s0",
+            "type": "xor",
+            "inputs": [
+                "t3_0",
+                "d2"
+            ],
+            "expr": "t3_0 xor d2",
+            "vulnerable": true
+        },
+        {
+            "id": "s1",
+            "type": "xor",
+            "inputs": [
+                "t3_1",
+                "d3"
+            ],
+            "expr": "t3_1 xor d3",
+            "vulnerable": true
+        },
+        {
+            "id": "s2",
+            "type": "xor",
+            "inputs": [
+                "t3_2",
+                "d0"
+            ],
+            "expr": "t3_2 xor d0",
+            "vulnerable": true
+        },
+        {
+            "id": "s3",
+            "type": "xor",
+            "inputs": [
+                "t3_3",
+                "d1"
+            ],
+            "expr": "t3_3 xor d1",
+            "vulnerable": true
+        },
+        {
+            "id": "t1_0_red",
+            "type": "and",
+            "inputs": [
+                "d0",
+                "d1"
+            ],
+            "expr": "d0 and d1 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "t1_1_red",
+            "type": "xor",
+            "inputs": [
+                "d1",
+                "d2"
+            ],
+            "expr": "d1 xor d2 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "t1_2_red",
+            "type": "xor",
+            "inputs": [
+                "d2",
+                "d3"
+            ],
+            "expr": "d2 xor d3 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "t1_3_red",
+            "type": "and",
+            "inputs": [
+                "d3",
+                "d0"
+            ],
+            "expr": "d3 and d0 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "nd0_red",
+            "type": "not",
+            "inputs": [
+                "d0"
+            ],
+            "expr": "not d0 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "nd1_red",
+            "type": "not",
+            "inputs": [
+                "d1"
+            ],
+            "expr": "not d1 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "nd2_red",
+            "type": "not",
+            "inputs": [
+                "d2"
+            ],
+            "expr": "not d2 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "nd3_red",
+            "type": "not",
+            "inputs": [
+                "d3"
+            ],
+            "expr": "not d3 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "t2_0_red",
+            "type": "xor",
+            "inputs": [
+                "t1_0_red",
+                "nd2_red"
+            ],
+            "expr": "t1_0_red xor nd2_red",
+            "vulnerable": false
+        },
+        {
+            "id": "t2_1_red",
+            "type": "xor",
+            "inputs": [
+                "t1_1_red",
+                "nd3_red"
+            ],
+            "expr": "t1_1_red xor nd3_red",
+            "vulnerable": false
+        },
+        {
+            "id": "t2_2_red",
+            "type": "xor",
+            "inputs": [
+                "t1_2_red",
+                "nd0_red"
+            ],
+            "expr": "t1_2_red xor nd0_red",
+            "vulnerable": false
+        },
+        {
+            "id": "t2_3_red",
+            "type": "xor",
+            "inputs": [
+                "t1_3_red",
+                "nd1_red"
+            ],
+            "expr": "t1_3_red xor nd1_red",
+            "vulnerable": false
+        },
+        {
+            "id": "t3_0_red",
+            "type": "or",
+            "inputs": [
+                "t1_0_red",
+                "t2_3_red"
+            ],
+            "expr": "t1_0_red or t2_3_red",
+            "vulnerable": false
+        },
+        {
+            "id": "t3_1_red",
+            "type": "or",
+            "inputs": [
+                "t1_1_red",
+                "t2_0_red"
+            ],
+            "expr": "t1_1_red or t2_0_red",
+            "vulnerable": false
+        },
+        {
+            "id": "t3_2_red",
+            "type": "or",
+            "inputs": [
+                "t1_2_red",
+                "t2_1_red"
+            ],
+            "expr": "t1_2_red or t2_1_red",
+            "vulnerable": false
+        },
+        {
+            "id": "t3_3_red",
+            "type": "or",
+            "inputs": [
+                "t1_3_red",
+                "t2_2_red"
+            ],
+            "expr": "t1_3_red or t2_2_red",
+            "vulnerable": false
+        },
+        {
+            "id": "s0_red",
+            "type": "xor",
+            "inputs": [
+                "t3_0_red",
+                "d2"
+            ],
+            "expr": "t3_0_red xor d2 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "s1_red",
+            "type": "xor",
+            "inputs": [
+                "t3_1_red",
+                "d3"
+            ],
+            "expr": "t3_1_red xor d3 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "s2_red",
+            "type": "xor",
+            "inputs": [
+                "t3_2_red",
+                "d0"
+            ],
+            "expr": "t3_2_red xor d0 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "s3_red",
+            "type": "xor",
+            "inputs": [
+                "t3_3_red",
+                "d1"
+            ],
+            "expr": "t3_3_red xor d1 (redundant)",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp0",
+            "type": "xor",
+            "inputs": [
+                "s0",
+                "s0_red"
+            ],
+            "expr": "s0 xor s0_red",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp1",
+            "type": "xor",
+            "inputs": [
+                "s1",
+                "s1_red"
+            ],
+            "expr": "s1 xor s1_red",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp2",
+            "type": "xor",
+            "inputs": [
+                "s2",
+                "s2_red"
+            ],
+            "expr": "s2 xor s2_red",
+            "vulnerable": false
+        },
+        {
+            "id": "cmp3",
+            "type": "xor",
+            "inputs": [
+                "s3",
+                "s3_red"
+            ],
+            "expr": "s3 xor s3_red",
+            "vulnerable": false
+        },
+        {
+            "id": "or1",
+            "type": "or",
+            "inputs": [
+                "cmp0",
+                "cmp1"
+            ],
+            "expr": "cmp0 or cmp1",
+            "vulnerable": false
+        },
+        {
+            "id": "or2",
+            "type": "or",
+            "inputs": [
+                "cmp2",
+                "cmp3"
+            ],
+            "expr": "cmp2 or cmp3",
+            "vulnerable": false
+        },
+        {
+            "id": "flag_logic",
+            "type": "or",
+            "inputs": [
+                "or1",
+                "or2"
+            ],
+            "expr": "or1 or or2",
+            "vulnerable": false
+        },
+        {
+            "id": "r0",
+            "type": "reg",
+            "inputs": [
+                "s0"
+            ],
+            "expr": "r0 = s0",
+            "vulnerable": false
+        },
+        {
+            "id": "r1",
+            "type": "reg",
+            "inputs": [
+                "s1"
+            ],
+            "expr": "r1 = s1",
+            "vulnerable": false
+        },
+        {
+            "id": "r2",
+            "type": "reg",
+            "inputs": [
+                "s2"
+            ],
+            "expr": "r2 = s2",
+            "vulnerable": false
+        },
+        {
+            "id": "r3",
+            "type": "reg",
+            "inputs": [
+                "s3"
+            ],
+            "expr": "r3 = s3",
+            "vulnerable": false
+        },
+        {
+            "id": "o0",
+            "type": "output",
+            "inputs": [
+                "r0"
+            ],
+            "expr": "o0 = r0"
+        },
+        {
+            "id": "o1",
+            "type": "output",
+            "inputs": [
+                "r1"
+            ],
+            "expr": "o1 = r1"
+        },
+        {
+            "id": "o2",
+            "type": "output",
+            "inputs": [
+                "r2"
+            ],
+            "expr": "o2 = r2"
+        },
+        {
+            "id": "o3",
+            "type": "output",
+            "inputs": [
+                "r3"
+            ],
+            "expr": "o3 = r3"
+        },
+        {
+            "id": "flag",
+            "type": "output",
+            "inputs": [
+                "flag_logic"
+            ],
+            "expr": "flag = flag_logic"
+        }
+    ],
+    "fault_model": {
+        "n_e": 1,
+        "n_c": 1,
+        "fault_type": "bit-flip",
+        "vulnerable_types": [
+            "and",
+            "xor",
+            "not",
+            "or"
+        ]
+    },
+    "blacklist": [
+        "r0",
+        "r1",
+        "r2",
+        "r3",
+        "t1_0_red",
+        "t1_1_red",
+        "t1_2_red",
+        "t1_3_red",
+        "nd0_red",
+        "nd1_red",
+        "nd2_red",
+        "nd3_red",
+        "t2_0_red",
+        "t2_1_red",
+        "t2_2_red",
+        "t2_3_red",
+        "t3_0_red",
+        "t3_1_red",
+        "t3_2_red",
+        "t3_3_red",
+        "s0_red",
+        "s1_red",
+        "s2_red",
+        "s3_red",
+        "cmp0",
+        "cmp1",
+        "cmp2",
+        "cmp3",
+        "or1",
+        "or2",
+        "flag_logic"
+    ],
+    "countermeasure": "detection",
+    "stages": 1
+}

@@ -1,0 +1,685 @@
+c Circuit: sbox
+c Variable Count: 100, Clause Count: 313
+p cnf 100 313
+c --------------------------------------------------
+c AND (t1_0)
+c Explanation: d0 AND d1 = t1_0
+c
+2 -1 0  c (d0 ∨ ~t1_0)
+3 -1 0  c (d1 ∨ ~t1_0)
+-2 -3 1 0  c (~d0 ∨ ~d1 ∨ t1_0)
+c
+c --------------------------------------------------
+c Fault_Injection (t1_0)
+c Explanation: Bit-flip fault on t1_0: control_t1_0 t1_0 t1_0_faulty
+c
+4 1 -5 0  c (control_t1_0 ∨ t1_0 ∨ ~t1_0_faulty)
+4 -1 5 0  c (control_t1_0 ∨ ~t1_0 ∨ t1_0_faulty)
+-4 1 5 0  c (~control_t1_0 ∨ t1_0 ∨ t1_0_faulty)
+-4 -1 -5 0  c (~control_t1_0 ∨ ~t1_0 ∨ ~t1_0_faulty)
+c
+c --------------------------------------------------
+c XOR (t1_1)
+c Explanation: d1 XOR d2 = t1_1
+c
+-3 -7 -6 0  c (~d1 ∨ ~d2 ∨ ~t1_1)
+3 7 -6 0  c (d1 ∨ d2 ∨ ~t1_1)
+-3 7 6 0  c (~d1 ∨ d2 ∨ t1_1)
+3 -7 6 0  c (d1 ∨ ~d2 ∨ t1_1)
+c
+c --------------------------------------------------
+c Fault_Injection (t1_1)
+c Explanation: Bit-flip fault on t1_1: control_t1_1 t1_1 t1_1_faulty
+c
+8 6 -9 0  c (control_t1_1 ∨ t1_1 ∨ ~t1_1_faulty)
+8 -6 9 0  c (control_t1_1 ∨ ~t1_1 ∨ t1_1_faulty)
+-8 6 9 0  c (~control_t1_1 ∨ t1_1 ∨ t1_1_faulty)
+-8 -6 -9 0  c (~control_t1_1 ∨ ~t1_1 ∨ ~t1_1_faulty)
+c
+c --------------------------------------------------
+c XOR (t1_2)
+c Explanation: d2 XOR d3 = t1_2
+c
+-7 -11 -10 0  c (~d2 ∨ ~d3 ∨ ~t1_2)
+7 11 -10 0  c (d2 ∨ d3 ∨ ~t1_2)
+-7 11 10 0  c (~d2 ∨ d3 ∨ t1_2)
+7 -11 10 0  c (d2 ∨ ~d3 ∨ t1_2)
+c
+c --------------------------------------------------
+c Fault_Injection (t1_2)
+c Explanation: Bit-flip fault on t1_2: control_t1_2 t1_2 t1_2_faulty
+c
+12 10 -13 0  c (control_t1_2 ∨ t1_2 ∨ ~t1_2_faulty)
+12 -10 13 0  c (control_t1_2 ∨ ~t1_2 ∨ t1_2_faulty)
+-12 10 13 0  c (~control_t1_2 ∨ t1_2 ∨ t1_2_faulty)
+-12 -10 -13 0  c (~control_t1_2 ∨ ~t1_2 ∨ ~t1_2_faulty)
+c
+c --------------------------------------------------
+c AND (t1_3)
+c Explanation: d3 AND d0 = t1_3
+c
+11 -14 0  c (d3 ∨ ~t1_3)
+2 -14 0  c (d0 ∨ ~t1_3)
+-11 -2 14 0  c (~d3 ∨ ~d0 ∨ t1_3)
+c
+c --------------------------------------------------
+c Fault_Injection (t1_3)
+c Explanation: Bit-flip fault on t1_3: control_t1_3 t1_3 t1_3_faulty
+c
+15 14 -16 0  c (control_t1_3 ∨ t1_3 ∨ ~t1_3_faulty)
+15 -14 16 0  c (control_t1_3 ∨ ~t1_3 ∨ t1_3_faulty)
+-15 14 16 0  c (~control_t1_3 ∨ t1_3 ∨ t1_3_faulty)
+-15 -14 -16 0  c (~control_t1_3 ∨ ~t1_3 ∨ ~t1_3_faulty)
+c
+c --------------------------------------------------
+c NOT (nd0)
+c Explanation: NOT d0 = nd0
+c
+2 17 0  c (d0 ∨ nd0)
+-2 -17 0  c (~d0 ∨ ~nd0)
+c
+c --------------------------------------------------
+c Fault_Injection (nd0)
+c Explanation: Bit-flip fault on nd0: control_nd0 nd0 nd0_faulty
+c
+18 17 -19 0  c (control_nd0 ∨ nd0 ∨ ~nd0_faulty)
+18 -17 19 0  c (control_nd0 ∨ ~nd0 ∨ nd0_faulty)
+-18 17 19 0  c (~control_nd0 ∨ nd0 ∨ nd0_faulty)
+-18 -17 -19 0  c (~control_nd0 ∨ ~nd0 ∨ ~nd0_faulty)
+c
+c --------------------------------------------------
+c NOT (nd1)
+c Explanation: NOT d1 = nd1
+c
+3 20 0  c (d1 ∨ nd1)
+-3 -20 0  c (~d1 ∨ ~nd1)
+c
+c --------------------------------------------------
+c Fault_Injection (nd1)
+c Explanation: Bit-flip fault on nd1: control_nd1 nd1 nd1_faulty
+c
+21 20 -22 0  c (control_nd1 ∨ nd1 ∨ ~nd1_faulty)
+21 -20 22 0  c (control_nd1 ∨ ~nd1 ∨ nd1_faulty)
+-21 20 22 0  c (~control_nd1 ∨ nd1 ∨ nd1_faulty)
+-21 -20 -22 0  c (~control_nd1 ∨ ~nd1 ∨ ~nd1_faulty)
+c
+c --------------------------------------------------
+c NOT (nd2)
+c Explanation: NOT d2 = nd2
+c
+7 23 0  c (d2 ∨ nd2)
+-7 -23 0  c (~d2 ∨ ~nd2)
+c
+c --------------------------------------------------
+c Fault_Injection (nd2)
+c Explanation: Bit-flip fault on nd2: control_nd2 nd2 nd2_faulty
+c
+24 23 -25 0  c (control_nd2 ∨ nd2 ∨ ~nd2_faulty)
+24 -23 25 0  c (control_nd2 ∨ ~nd2 ∨ nd2_faulty)
+-24 23 25 0  c (~control_nd2 ∨ nd2 ∨ nd2_faulty)
+-24 -23 -25 0  c (~control_nd2 ∨ ~nd2 ∨ ~nd2_faulty)
+c
+c --------------------------------------------------
+c NOT (nd3)
+c Explanation: NOT d3 = nd3
+c
+11 26 0  c (d3 ∨ nd3)
+-11 -26 0  c (~d3 ∨ ~nd3)
+c
+c --------------------------------------------------
+c Fault_Injection (nd3)
+c Explanation: Bit-flip fault on nd3: control_nd3 nd3 nd3_faulty
+c
+27 26 -28 0  c (control_nd3 ∨ nd3 ∨ ~nd3_faulty)
+27 -26 28 0  c (control_nd3 ∨ ~nd3 ∨ nd3_faulty)
+-27 26 28 0  c (~control_nd3 ∨ nd3 ∨ nd3_faulty)
+-27 -26 -28 0  c (~control_nd3 ∨ ~nd3 ∨ ~nd3_faulty)
+c
+c --------------------------------------------------
+c XOR (t2_0)
+c Explanation: t1_0 XOR nd2 = t2_0
+c
+-1 -23 -29 0  c (~t1_0 ∨ ~nd2 ∨ ~t2_0)
+1 23 -29 0  c (t1_0 ∨ nd2 ∨ ~t2_0)
+-1 23 29 0  c (~t1_0 ∨ nd2 ∨ t2_0)
+1 -23 29 0  c (t1_0 ∨ ~nd2 ∨ t2_0)
+c
+c --------------------------------------------------
+c Fault_Injection (t2_0)
+c Explanation: Bit-flip fault on t2_0: control_t2_0 t2_0 t2_0_faulty
+c
+30 29 -31 0  c (control_t2_0 ∨ t2_0 ∨ ~t2_0_faulty)
+30 -29 31 0  c (control_t2_0 ∨ ~t2_0 ∨ t2_0_faulty)
+-30 29 31 0  c (~control_t2_0 ∨ t2_0 ∨ t2_0_faulty)
+-30 -29 -31 0  c (~control_t2_0 ∨ ~t2_0 ∨ ~t2_0_faulty)
+c
+c --------------------------------------------------
+c XOR (t2_1)
+c Explanation: t1_1 XOR nd3 = t2_1
+c
+-6 -26 -32 0  c (~t1_1 ∨ ~nd3 ∨ ~t2_1)
+6 26 -32 0  c (t1_1 ∨ nd3 ∨ ~t2_1)
+-6 26 32 0  c (~t1_1 ∨ nd3 ∨ t2_1)
+6 -26 32 0  c (t1_1 ∨ ~nd3 ∨ t2_1)
+c
+c --------------------------------------------------
+c Fault_Injection (t2_1)
+c Explanation: Bit-flip fault on t2_1: control_t2_1 t2_1 t2_1_faulty
+c
+33 32 -34 0  c (control_t2_1 ∨ t2_1 ∨ ~t2_1_faulty)
+33 -32 34 0  c (control_t2_1 ∨ ~t2_1 ∨ t2_1_faulty)
+-33 32 34 0  c (~control_t2_1 ∨ t2_1 ∨ t2_1_faulty)
+-33 -32 -34 0  c (~control_t2_1 ∨ ~t2_1 ∨ ~t2_1_faulty)
+c
+c --------------------------------------------------
+c XOR (t2_2)
+c Explanation: t1_2 XOR nd0 = t2_2
+c
+-10 -17 -35 0  c (~t1_2 ∨ ~nd0 ∨ ~t2_2)
+10 17 -35 0  c (t1_2 ∨ nd0 ∨ ~t2_2)
+-10 17 35 0  c (~t1_2 ∨ nd0 ∨ t2_2)
+10 -17 35 0  c (t1_2 ∨ ~nd0 ∨ t2_2)
+c
+c --------------------------------------------------
+c Fault_Injection (t2_2)
+c Explanation: Bit-flip fault on t2_2: control_t2_2 t2_2 t2_2_faulty
+c
+36 35 -37 0  c (control_t2_2 ∨ t2_2 ∨ ~t2_2_faulty)
+36 -35 37 0  c (control_t2_2 ∨ ~t2_2 ∨ t2_2_faulty)
+-36 35 37 0  c (~control_t2_2 ∨ t2_2 ∨ t2_2_faulty)
+-36 -35 -37 0  c (~control_t2_2 ∨ ~t2_2 ∨ ~t2_2_faulty)
+c
+c --------------------------------------------------
+c XOR (t2_3)
+c Explanation: t1_3 XOR nd1 = t2_3
+c
+-14 -20 -38 0  c (~t1_3 ∨ ~nd1 ∨ ~t2_3)
+14 20 -38 0  c (t1_3 ∨ nd1 ∨ ~t2_3)
+-14 20 38 0  c (~t1_3 ∨ nd1 ∨ t2_3)
+14 -20 38 0  c (t1_3 ∨ ~nd1 ∨ t2_3)
+c
+c --------------------------------------------------
+c Fault_Injection (t2_3)
+c Explanation: Bit-flip fault on t2_3: control_t2_3 t2_3 t2_3_faulty
+c
+39 38 -40 0  c (control_t2_3 ∨ t2_3 ∨ ~t2_3_faulty)
+39 -38 40 0  c (control_t2_3 ∨ ~t2_3 ∨ t2_3_faulty)
+-39 38 40 0  c (~control_t2_3 ∨ t2_3 ∨ t2_3_faulty)
+-39 -38 -40 0  c (~control_t2_3 ∨ ~t2_3 ∨ ~t2_3_faulty)
+c
+c --------------------------------------------------
+c AND (t3_0)
+c Explanation: t1_0 AND t2_3 = t3_0
+c
+-1 41 0  c (~t1_0 ∨ t3_0)
+-38 41 0  c (~t2_3 ∨ t3_0)
+1 38 -41 0  c (t1_0 ∨ t2_3 ∨ ~t3_0)
+c
+c --------------------------------------------------
+c Fault_Injection (t3_0)
+c Explanation: Bit-flip fault on t3_0: control_t3_0 t3_0 t3_0_faulty
+c
+42 41 -43 0  c (control_t3_0 ∨ t3_0 ∨ ~t3_0_faulty)
+42 -41 43 0  c (control_t3_0 ∨ ~t3_0 ∨ t3_0_faulty)
+-42 41 43 0  c (~control_t3_0 ∨ t3_0 ∨ t3_0_faulty)
+-42 -41 -43 0  c (~control_t3_0 ∨ ~t3_0 ∨ ~t3_0_faulty)
+c
+c --------------------------------------------------
+c AND (t3_1)
+c Explanation: t1_1 AND t2_0 = t3_1
+c
+-6 44 0  c (~t1_1 ∨ t3_1)
+-29 44 0  c (~t2_0 ∨ t3_1)
+6 29 -44 0  c (t1_1 ∨ t2_0 ∨ ~t3_1)
+c
+c --------------------------------------------------
+c Fault_Injection (t3_1)
+c Explanation: Bit-flip fault on t3_1: control_t3_1 t3_1 t3_1_faulty
+c
+45 44 -46 0  c (control_t3_1 ∨ t3_1 ∨ ~t3_1_faulty)
+45 -44 46 0  c (control_t3_1 ∨ ~t3_1 ∨ t3_1_faulty)
+-45 44 46 0  c (~control_t3_1 ∨ t3_1 ∨ t3_1_faulty)
+-45 -44 -46 0  c (~control_t3_1 ∨ ~t3_1 ∨ ~t3_1_faulty)
+c
+c --------------------------------------------------
+c AND (t3_2)
+c Explanation: t1_2 AND t2_1 = t3_2
+c
+-10 47 0  c (~t1_2 ∨ t3_2)
+-32 47 0  c (~t2_1 ∨ t3_2)
+10 32 -47 0  c (t1_2 ∨ t2_1 ∨ ~t3_2)
+c
+c --------------------------------------------------
+c Fault_Injection (t3_2)
+c Explanation: Bit-flip fault on t3_2: control_t3_2 t3_2 t3_2_faulty
+c
+48 47 -49 0  c (control_t3_2 ∨ t3_2 ∨ ~t3_2_faulty)
+48 -47 49 0  c (control_t3_2 ∨ ~t3_2 ∨ t3_2_faulty)
+-48 47 49 0  c (~control_t3_2 ∨ t3_2 ∨ t3_2_faulty)
+-48 -47 -49 0  c (~control_t3_2 ∨ ~t3_2 ∨ ~t3_2_faulty)
+c
+c --------------------------------------------------
+c AND (t3_3)
+c Explanation: t1_3 AND t2_2 = t3_3
+c
+-14 50 0  c (~t1_3 ∨ t3_3)
+-35 50 0  c (~t2_2 ∨ t3_3)
+14 35 -50 0  c (t1_3 ∨ t2_2 ∨ ~t3_3)
+c
+c --------------------------------------------------
+c Fault_Injection (t3_3)
+c Explanation: Bit-flip fault on t3_3: control_t3_3 t3_3 t3_3_faulty
+c
+51 50 -52 0  c (control_t3_3 ∨ t3_3 ∨ ~t3_3_faulty)
+51 -50 52 0  c (control_t3_3 ∨ ~t3_3 ∨ t3_3_faulty)
+-51 50 52 0  c (~control_t3_3 ∨ t3_3 ∨ t3_3_faulty)
+-51 -50 -52 0  c (~control_t3_3 ∨ ~t3_3 ∨ ~t3_3_faulty)
+c
+c --------------------------------------------------
+c XOR (s0)
+c Explanation: t3_0 XOR d2 = s0
+c
+-41 -7 -53 0  c (~t3_0 ∨ ~d2 ∨ ~s0)
+41 7 -53 0  c (t3_0 ∨ d2 ∨ ~s0)
+-41 7 53 0  c (~t3_0 ∨ d2 ∨ s0)
+41 -7 53 0  c (t3_0 ∨ ~d2 ∨ s0)
+c
+c --------------------------------------------------
+c Fault_Injection (s0)
+c Explanation: Bit-flip fault on s0: control_s0 s0 s0_faulty
+c
+54 53 -55 0  c (control_s0 ∨ s0 ∨ ~s0_faulty)
+54 -53 55 0  c (control_s0 ∨ ~s0 ∨ s0_faulty)
+-54 53 55 0  c (~control_s0 ∨ s0 ∨ s0_faulty)
+-54 -53 -55 0  c (~control_s0 ∨ ~s0 ∨ ~s0_faulty)
+c
+c --------------------------------------------------
+c XOR (s1)
+c Explanation: t3_1 XOR d3 = s1
+c
+-44 -11 -56 0  c (~t3_1 ∨ ~d3 ∨ ~s1)
+44 11 -56 0  c (t3_1 ∨ d3 ∨ ~s1)
+-44 11 56 0  c (~t3_1 ∨ d3 ∨ s1)
+44 -11 56 0  c (t3_1 ∨ ~d3 ∨ s1)
+c
+c --------------------------------------------------
+c Fault_Injection (s1)
+c Explanation: Bit-flip fault on s1: control_s1 s1 s1_faulty
+c
+57 56 -58 0  c (control_s1 ∨ s1 ∨ ~s1_faulty)
+57 -56 58 0  c (control_s1 ∨ ~s1 ∨ s1_faulty)
+-57 56 58 0  c (~control_s1 ∨ s1 ∨ s1_faulty)
+-57 -56 -58 0  c (~control_s1 ∨ ~s1 ∨ ~s1_faulty)
+c
+c --------------------------------------------------
+c XOR (s2)
+c Explanation: t3_2 XOR d0 = s2
+c
+-47 -2 -59 0  c (~t3_2 ∨ ~d0 ∨ ~s2)
+47 2 -59 0  c (t3_2 ∨ d0 ∨ ~s2)
+-47 2 59 0  c (~t3_2 ∨ d0 ∨ s2)
+47 -2 59 0  c (t3_2 ∨ ~d0 ∨ s2)
+c
+c --------------------------------------------------
+c Fault_Injection (s2)
+c Explanation: Bit-flip fault on s2: control_s2 s2 s2_faulty
+c
+60 59 -61 0  c (control_s2 ∨ s2 ∨ ~s2_faulty)
+60 -59 61 0  c (control_s2 ∨ ~s2 ∨ s2_faulty)
+-60 59 61 0  c (~control_s2 ∨ s2 ∨ s2_faulty)
+-60 -59 -61 0  c (~control_s2 ∨ ~s2 ∨ ~s2_faulty)
+c
+c --------------------------------------------------
+c XOR (s3)
+c Explanation: t3_3 XOR d1 = s3
+c
+-50 -3 -62 0  c (~t3_3 ∨ ~d1 ∨ ~s3)
+50 3 -62 0  c (t3_3 ∨ d1 ∨ ~s3)
+-50 3 62 0  c (~t3_3 ∨ d1 ∨ s3)
+50 -3 62 0  c (t3_3 ∨ ~d1 ∨ s3)
+c
+c --------------------------------------------------
+c Fault_Injection (s3)
+c Explanation: Bit-flip fault on s3: control_s3 s3 s3_faulty
+c
+63 62 -64 0  c (control_s3 ∨ s3 ∨ ~s3_faulty)
+63 -62 64 0  c (control_s3 ∨ ~s3 ∨ s3_faulty)
+-63 62 64 0  c (~control_s3 ∨ s3 ∨ s3_faulty)
+-63 -62 -64 0  c (~control_s3 ∨ ~s3 ∨ ~s3_faulty)
+c
+c --------------------------------------------------
+c AND (t1_0_red)
+c Explanation: d0 AND d1 = t1_0_red (Redundant)
+c
+2 -65 0  c (d0 ∨ ~t1_0_red)
+3 -65 0  c (d1 ∨ ~t1_0_red)
+-2 -3 65 0  c (~d0 ∨ ~d1 ∨ t1_0_red)
+c
+c --------------------------------------------------
+c XOR (t1_1_red)
+c Explanation: d1 XOR d2 = t1_1_red (Redundant)
+c
+-3 -7 -66 0  c (~d1 ∨ ~d2 ∨ ~t1_1_red)
+3 7 -66 0  c (d1 ∨ d2 ∨ ~t1_1_red)
+-3 7 66 0  c (~d1 ∨ d2 ∨ t1_1_red)
+3 -7 66 0  c (d1 ∨ ~d2 ∨ t1_1_red)
+c
+c --------------------------------------------------
+c XOR (t1_2_red)
+c Explanation: d2 XOR d3 = t1_2_red (Redundant)
+c
+-7 -11 -67 0  c (~d2 ∨ ~d3 ∨ ~t1_2_red)
+7 11 -67 0  c (d2 ∨ d3 ∨ ~t1_2_red)
+-7 11 67 0  c (~d2 ∨ d3 ∨ t1_2_red)
+7 -11 67 0  c (d2 ∨ ~d3 ∨ t1_2_red)
+c
+c --------------------------------------------------
+c AND (t1_3_red)
+c Explanation: d3 AND d0 = t1_3_red (Redundant)
+c
+11 -68 0  c (d3 ∨ ~t1_3_red)
+2 -68 0  c (d0 ∨ ~t1_3_red)
+-11 -2 68 0  c (~d3 ∨ ~d0 ∨ t1_3_red)
+c
+c --------------------------------------------------
+c NOT (nd0_red)
+c Explanation: NOT d0 = nd0_red (Redundant)
+c
+2 69 0  c (d0 ∨ nd0_red)
+-2 -69 0  c (~d0 ∨ ~nd0_red)
+c
+c --------------------------------------------------
+c NOT (nd1_red)
+c Explanation: NOT d1 = nd1_red (Redundant)
+c
+3 70 0  c (d1 ∨ nd1_red)
+-3 -70 0  c (~d1 ∨ ~nd1_red)
+c
+c --------------------------------------------------
+c NOT (nd2_red)
+c Explanation: NOT d2 = nd2_red (Redundant)
+c
+7 71 0  c (d2 ∨ nd2_red)
+-7 -71 0  c (~d2 ∨ ~nd2_red)
+c
+c --------------------------------------------------
+c NOT (nd3_red)
+c Explanation: NOT d3 = nd3_red (Redundant)
+c
+11 72 0  c (d3 ∨ nd3_red)
+-11 -72 0  c (~d3 ∨ ~nd3_red)
+c
+c --------------------------------------------------
+c XOR (t2_0_red)
+c Explanation: t1_0_red XOR nd2_red = t2_0_red (Redundant)
+c
+-65 -71 -73 0  c (~t1_0_red ∨ ~nd2_red ∨ ~t2_0_red)
+65 71 -73 0  c (t1_0_red ∨ nd2_red ∨ ~t2_0_red)
+-65 71 73 0  c (~t1_0_red ∨ nd2_red ∨ t2_0_red)
+65 -71 73 0  c (t1_0_red ∨ ~nd2_red ∨ t2_0_red)
+c
+c --------------------------------------------------
+c XOR (t2_1_red)
+c Explanation: t1_1_red XOR nd3_red = t2_1_red (Redundant)
+c
+-66 -72 -74 0  c (~t1_1_red ∨ ~nd3_red ∨ ~t2_1_red)
+66 72 -74 0  c (t1_1_red ∨ nd3_red ∨ ~t2_1_red)
+-66 72 74 0  c (~t1_1_red ∨ nd3_red ∨ t2_1_red)
+66 -72 74 0  c (t1_1_red ∨ ~nd3_red ∨ t2_1_red)
+c
+c --------------------------------------------------
+c XOR (t2_2_red)
+c Explanation: t1_2_red XOR nd0_red = t2_2_red (Redundant)
+c
+-67 -69 -75 0  c (~t1_2_red ∨ ~nd0_red ∨ ~t2_2_red)
+67 69 -75 0  c (t1_2_red ∨ nd0_red ∨ ~t2_2_red)
+-67 69 75 0  c (~t1_2_red ∴ nd0_red ∨ t2_2_red)
+67 -69 75 0  c (t1_2_red ∨ ~nd0_red ∨ t2_2_red)
+c
+c --------------------------------------------------
+c XOR (t2_3_red)
+c Explanation: t1_3_red XOR nd1_red = t2_3_red (Redundant)
+c
+-68 -70 -76 0  c (~t1_3_red ∨ ~nd1_red ∨ ~t2_3_red)
+68 70 -76 0  c (t1_3_red ∨ nd1_red ∨ ~t2_3_red)
+-68 70 76 0  c (~t1_3_red ∨ nd1_red ∨ t2_3_red)
+68 -70 76 0  c (t1_3_red ∨ ~nd1_red ∨ t2_3_red)
+c
+c --------------------------------------------------
+c AND (t3_0_red)
+c Explanation: t1_0_red AND t2_3_red = t3_0_red (Redundant)
+c
+-65 77 0  c (~t1_0_red ∨ t3_0_red)
+-76 77 0  c (~t2_3_red ∨ t3_0_red)
+65 76 -77 0  c (t1_0_red ∨ t2_3_red ∨ ~t3_0_red)
+c
+c --------------------------------------------------
+c AND (t3_1_red)
+c Explanation: t1_1_red AND t2_0_red = t3_1_red (Redundant)
+c
+-66 78 0  c (~t1_1_red ∨ t3_1_red)
+-73 78 0  c (~t2_0_red ∨ t3_1_red)
+66 73 -78 0  c (t1_1_red ∨ t2_0_red ∨ ~t3_1_red)
+c
+c --------------------------------------------------
+c AND (t3_2_red)
+c Explanation: t1_2_red AND t2_1_red = t3_2_red (Redundant)
+c
+-67 79 0  c (~t1_2_red ∨ t3_2_red)
+-74 79 0  c (~t2_1_red ∨ t3_2_red)
+67 74 -79 0  c (t1_2_red ∨ t2_1_red ∨ ~t3_2_red)
+c
+c --------------------------------------------------
+c AND (t3_3_red)
+c Explanation: t1_3_red AND t2_2_red = t3_3_red (Redundant)
+c
+-68 80 0  c (~t1_3_red ∨ t3_3_red)
+-75 80 0  c (~t2_2_red ∨ t3_3_red)
+68 75 -80 0  c (t1_3_red ∨ t2_2_red ∨ ~t3_3_red)
+c
+c --------------------------------------------------
+c XOR (s0_red)
+c Explanation: t3_0_red XOR d2 = s0_red (Redundant)
+c
+-77 -7 -81 0  c (~t3_0_red ∨ ~d2 ∨ ~s0_red)
+77 7 -81 0  c (t3_0_red ∨ d2 ∨ ~s0_red)
+-77 7 81 0  c (~t3_0_red ∨ d2 ∨ s0_red)
+77 -7 81 0  c (t3_0_red ∨ ~d2 ∨ s0_red)
+c
+c --------------------------------------------------
+c XOR (s1_red)
+c Explanation: t3_1_red XOR d3 = s1_red (Redundant)
+c
+-78 -11 -82 0  c (~t3_1_red ∨ ~d3 ∨ ~s1_red)
+78 11 -82 0  c (t3_1_red ∨ d3 ∨ ~s1_red)
+-78 11 82 0  c (~t3_1_red ∨ d3 ∨ s1_red)
+78 -11 82 0  c (t3_1_red ∨ ~d3 ∨ s1_red)
+c
+c --------------------------------------------------
+c XOR (s2_red)
+c Explanation: t3_2_red XOR d0 = s2_red (Redundant)
+c
+-79 -2 -83 0  c (~t3_2_red ∨ ~d0 ∨ ~s2_red)
+79 2 -83 0  c (t3_2_red ∨ d0 ∨ ~s2_red)
+-79 2 83 0  c (~t3_2_red ∨ d0 ∨ s2_red)
+79 -2 83 0  c (t3_2_red ∨ ~d0 ∨ s2_red)
+c
+c --------------------------------------------------
+c XOR (s3_red)
+c Explanation: t3_3_red XOR d1 = s3_red (Redundant)
+c
+-80 -3 -84 0  c (~t3_3_red ∨ ~d1 ∨ ~s3_red)
+80 3 -84 0  c (t3_3_red ∨ d1 ∨ ~s3_red)
+-80 3 84 0  c (~t3_3_red ∨ d1 ∨ s3_red)
+80 -3 84 0  c (t3_3_red ∨ ~d1 ∨ s3_red)
+c
+c --------------------------------------------------
+c Comparison (cmp0)
+c Explanation: s0_faulty XOR s0_red = cmp0 (Fault Detection)
+c
+-55 -81 -85 0  c (~s0_faulty ∨ ~s0_red ∨ ~cmp0)
+55 81 -85 0  c (s0_faulty ∨ s0_red ∨ ~cmp0)
+-55 81 85 0  c (~s0_faulty ∨ s0_red ∨ cmp0)
+55 -81 85 0  c (s0_faulty ∨ ~s0_red ∨ cmp0)
+c
+c --------------------------------------------------
+c Comparison (cmp1)
+c Explanation: s1_faulty XOR s1_red = cmp1 (Fault Detection)
+c
+-58 -82 -86 0  c (~s1_faulty ∨ ~s1_red ∨ ~cmp1)
+58 82 -86 0  c (s1_faulty ∨ s1_red ∨ ~cmp1)
+-58 82 86 0  c (~s1_faulty ∨ s1_red ∨ cmp1)
+58 -82 86 0  c (s1_faulty ∨ ~s1_red ∨ cmp1)
+c
+c --------------------------------------------------
+c Comparison (cmp2)
+c Explanation: s2_faulty XOR s2_red = cmp2 (Fault Detection)
+c
+-61 -83 -87 0  c (~s2_faulty ∨ ~s2_red ∨ ~cmp2)
+61 83 -87 0  c (s2_faulty ∨ s2_red ∨ ~cmp2)
+-61 83 87 0  c (~s2_faulty ∨ s2_red ∨ cmp2)
+61 -83 87 0  c (s2_faulty ∨ ~s2_red ∨ cmp2)
+c
+c --------------------------------------------------
+c Comparison (cmp3)
+c Explanation: s3_faulty XOR s3_red = cmp3 (Fault Detection)
+c
+-64 -84 -88 0  c (~s3_faulty ∨ ~s3_red ∨ ~cmp3)
+64 84 -88 0  c (s3_faulty ∨ s3_red ∨ ~cmp3)
+-64 84 88 0  c (~s3_faulty ∨ s3_red ∨ cmp3)
+64 -84 88 0  c (s3_faulty ∨ ~s3_red ∨ cmp3)
+c
+c --------------------------------------------------
+c OR (or1)
+c Explanation: cmp0 OR cmp1 = or1 (OR Gate Definition)
+c
+-85 89 0  c (~cmp0 ∨ or1)
+-86 89 0  c (~cmp1 ∨ or1)
+85 86 -89 0  c (cmp0 ∨ cmp1 ∨ ~or1)
+c
+c --------------------------------------------------
+c OR (or2)
+c Explanation: cmp2 OR cmp3 = or2 (OR Gate Definition)
+c
+-87 90 0  c (~cmp2 ∨ or2)
+-88 90 0  c (~cmp3 ∨ or2)
+87 88 -90 0  c (cmp2 ∨ cmp3 ∨ ~or2)
+c
+c --------------------------------------------------
+c OR (flag_logic)
+c Explanation: or1 OR or2 = flag_logic (OR Gate Definition)
+c
+-89 91 0  c (~or1 ∨ flag_logic)
+-90 91 0  c (~or2 ∨ flag_logic)
+89 90 -91 0  c (or1 ∨ or2 ∨ ~flag_logic)
+c
+c --------------------------------------------------
+c Register (r0)
+c Explanation: s0 = r0 (Register Connection)
+c
+-53 92 0  c (~s0 ∨ r0)
+53 -92 0  c (s0 ∨ ~r0)
+-92 96 0  c (~r0 ∨ o0)
+92 -96 0  c (r0 ∨ ~o0)
+c
+c --------------------------------------------------
+c Register (r1)
+c Explanation: s1 = r1 (Register Connection)
+c
+-56 93 0  c (~s1 ∨ r1)
+56 -93 0  c (s1 ∨ ~r1)
+-93 97 0  c (~r1 ∨ o1)
+93 -97 0  c (r1 ∨ ~o1)
+c
+c --------------------------------------------------
+c Register (r2)
+c Explanation: s2 = r2 (Register Connection)
+c
+-59 94 0  c (~s2 ∨ r2)
+59 -94 0  c (s2 ∨ ~r2)
+-94 98 0  c (~r2 ∨ o2)
+94 -98 0  c (r2 ∨ ~o2)
+c
+c --------------------------------------------------
+c Register (r3)
+c Explanation: s3 = r3 (Register Connection)
+c
+-62 95 0  c (~s3 ∨ r3)
+62 -95 0  c (s3 ∨ ~r3)
+-95 99 0  c (~r3 ∨ o3)
+95 -99 0  c (r3 ∨ ~o3)
+c
+c --------------------------------------------------
+c Countermeasure (flag)
+c Explanation: Detection: flag = 0
+c
+-91 100 0  c (~flag_logic ∨ flag)
+91 -100 0  c (flag_logic ∨ ~flag)
+-100 0  c (~flag)
+c
+c --------------------------------------------------
+c Fault_Constraint (at_least_one_control)
+c Explanation: At least 1 fault constraint
+c
+4 8 12 15 18 21 24 27 30 33 36 39 42 45 48 51 54 57 60 63 0  c (control_t1_0 ∨ control_t1_1 ∨ control_t1_2 ∨ control_t1_3 ∨ control_nd0 ∨ control_nd1 ∨ control_nd2 ∨ control_nd3 ∨ control_t2_0 ∨ control_t2_1 ∨ control_t2_2 ∨ control_t2_3 ∨ control_t3_0 ∨ control_t3_1 ∨ control_t3_2 ∨ control_t3_3 ∨ control_s0 ∨ control_s1 ∨ control_s2 ∨ control_s3)
+c
+c --------------------------------------------------
+c AtMost (atmost_constraints)
+c Explanation: Fault number constraints (AtMost)
+c
+-4 64 0  c (~control_t1_0 ∨ s3_faulty)
+-64 65 0  c (~s3_faulty ∨ t1_0_red)
+-8 -64 0  c (~control_t1_1 ∨ ~s3_faulty)
+-8 65 0  c (~control_t1_1 ∨ t1_0_red)
+-65 66 0  c (~t1_0_red ∨ t1_1_red)
+-12 -65 0  c (~control_t1_2 ∨ ~t1_0_red)
+-12 66 0  c (~control_t1_2 ∨ t1_1_red)
+-66 67 0  c (~t1_1_red ∨ t1_2_red)
+-15 -66 0  c (~control_t1_3 ∨ ~t1_1_red)
+-15 67 0  c (~control_t1_3 ∨ t1_2_red)
+-67 68 0  c (~t1_2_red ∨ t1_3_red)
+-18 -67 0  c (~control_nd0 ∨ ~t1_2_red)
+-18 68 0  c (~control_nd0 ∨ t1_3_red)
+-68 69 0  c (~t1_3_red ∨ nd0_red)
+-21 -68 0  c (~control_nd1 ∨ ~t1_3_red)
+-21 69 0  c (~control_nd1 ∨ nd0_red)
+-69 70 0  c (~nd0_red ∨ nd1_red)
+-24 -69 0  c (~control_nd2 ∨ ~nd0_red)
+-24 70 0  c (~control_nd2 ∨ nd1_red)
+-70 71 0  c (~nd1_red ∨ nd2_red)
+-27 -70 0  c (~control_nd3 ∨ ~nd1_red)
+-27 71 0  c (~control_nd3 ∨ nd2_red)
+-71 72 0  c (~nd2_red ∨ nd3_red)
+-30 -71 0  c (~control_t2_0 ∨ ~nd2_red)
+-30 72 0  c (~control_t2_0 ∨ nd3_red)
+-72 73 0  c (~nd3_red ∨ t2_0_red)
+-33 -72 0  c (~control_t2_1 ∨ ~nd3_red)
+-33 73 0  c (~control_t2_1 ∨ t2_0_red)
+-73 74 0  c (~t2_0_red ∨ t2_1_red)
+-36 -73 0  c (~control_t2_2 ∨ ~t2_0_red)
+-36 74 0  c (~control_t2_2 ∨ t2_1_red)
+-74 75 0  c (~t2_1_red ∨ t2_2_red)
+-39 -74 0  c (~control_t2_3 ∨ ~t2_1_red)
+-39 75 0  c (~control_t2_3 ∨ t2_2_red)
+-75 76 0  c (~t2_2_red ∨ t2_3_red)
+-42 -75 0  c (~control_t3_0 ∨ ~t2_2_red)
+-42 76 0  c (~control_t3_0 ∨ t2_3_red)
+-76 77 0  c (~t2_3_red ∨ t3_0_red)
+-45 -76 0  c (~control_t3_1 ∨ ~t2_3_red)
+-45 77 0  c (~control_t3_1 ∨ t3_0_red)
+-77 78 0  c (~t3_0_red ∨ t3_1_red)
+-48 -77 0  c (~control_t3_2 ∨ ~t3_0_red)
+-48 78 0  c (~control_t3_2 ∨ t3_1_red)
+-78 79 0  c (~t3_1_red ∨ t3_2_red)
+-51 -78 0  c (~control_t3_3 ∨ ~t3_1_red)
+-51 79 0  c (~control_t3_3 ∨ t3_2_red)
+-79 80 0  c (~t3_2_red ∨ t3_3_red)
+-54 -79 0  c (~control_s0 ∨ ~t3_2_red)
+-54 80 0  c (~control_s0 ∨ t3_3_red)
+-80 81 0  c (~t3_3_red ∨ s0_red)
+-57 -80 0  c (~control_s1 ∨ ~t3_3_red)
+-57 81 0  c (~control_s1 ∨ s0_red)
+-81 82 0  c (~s0_red ∨ s1_red)
+-60 -81 0  c (~control_s2 ∨ ~s0_red)
+-60 82 0  c (~control_s2 ∨ s1_red)
+-63 -82 0  c (~control_s3 ∨ ~s1_red)
